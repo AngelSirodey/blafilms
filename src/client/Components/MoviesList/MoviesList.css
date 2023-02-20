@@ -58,4 +58,11 @@
   .search-item .search-item-data .meta {
     font-size: 14px;
   }
-  
+
+  .search-error {
+    border-radius: 5px;
+    background-color: #f1faee;
+    color: #e63946;
+    margin: 20px;
+    padding: 10px;
+  }

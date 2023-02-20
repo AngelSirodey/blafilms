@@ -24,7 +24,7 @@ const SearchContainer = () => {
     }, [searchByName, page])
 
     const searchButton = (value) => {
-      setSearchByName(value);
+      value && setSearchByName(value);
     }
 
     const changePage = (type) => {
