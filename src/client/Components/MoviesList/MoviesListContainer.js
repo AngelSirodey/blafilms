@@ -5,12 +5,12 @@ import MoviesList from './MoviesList';
 
 import './MoviesList.css';
 
-const MoviesListContainer = ({moviesData, nextPage, previousPage}) => {
+const MoviesListContainer = ({moviesData, changePage}) => {
 
   return (
     <div className="search-results">
       <div className="chevron">
-        <ChevronLeft onClick={() => previousPage()} />
+        <ChevronLeft onClick={() => changePage('decrement')} />
       </div>
       <div className="search-results-list">
         {moviesData?.Search.map(movie => (
@@ -18,7 +18,7 @@ const MoviesListContainer = ({moviesData, nextPage, previousPage}) => {
         ))}
       </div>
       <div className="chevron">
-        <ChevronRight onClick={() => nextPage()}/>
+        <ChevronRight onClick={() => changePage('increment')}/>
       </div>
     </div>
    )

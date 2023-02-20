@@ -10,24 +10,32 @@ const SearchContainer = () => {
     const [page, setPage] = useState(1);
 
     useEffect(() => {
-      const getMovies = async () => {
-        const data = await getMoviesByNameAndPage(searchByName, page)
-  
-        setMoviesData(data)
-      }
-      getMovies()
+        const getMovies = async () => {
+          try {
+            const data = await getMoviesByNameAndPage(searchByName, page)
+
+            setMoviesData(data)
+          } catch (err) {
+            console.error(err)
+          }
+        }
+        getMovies()
+
     }, [searchByName, page])
 
     const searchButton = (value) => {
       setSearchByName(value);
     }
-    
-    const nextPage = () => {
-      page < 100 && setPage(page + 1);
-    }
 
-    const previousPage = () => {
-      page > 1 && setPage(page - 1)
+    const changePage = (type) => {
+      switch (type) {
+        case 'increment':
+          return page < 100 && setPage(page + 1)
+        case 'decrement':
+          return page > 1 && setPage(page - 1)
+        default:
+          setPage(1)
+      }
     }
 
     return (
@@ -38,8 +46,7 @@ const SearchContainer = () => {
         ) : (
           <MoviesList
           moviesData={moviesData}
-          nextPage={nextPage}
-          previousPage={previousPage}
+          changePage={changePage}
           />
         )}
       </>
