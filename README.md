@@ -49,3 +49,14 @@ Los resultados se deben actualizar con lo que devuelva la api.
   Tendrás que valorar si el hook sigue siendo necesario cuando implementes las features que se piden.
   Si no te resulta muy familiar el hook tienes que leer un poco sobre él y como manejar peticiones asíncronas en su interior, ya que un mal uso puede dar lugar a bucles infinitos.
 - La api de OMDB devuelve dos veces la misma película al buscar con la palabra "king". Eso hace que cuando se pintan esas primeras 10 películas haya un error en la consola porque encuentra dos items con la misma key. Alguna idea de como gestionarlo?
+
+### Memoria
+
+- He creado dos carpetas una de cliente y otra de servidor.
+
+- En la carpeta de cliente tenemos una carpeta de componentes donde he añadido dos componentes: un Search y un MoviesList
+  En el Search está toda la lógica del buscador y en el MoviesList se muestran los resultados de la busqueda.
+  He decidido dejar el UseEffect para que haya una carga inicial con películas y que no solo haya un simple input al entrar.
+  
+- En la carpeta de server tenemos la llamada fetch y una carpeta de config con las variables para la url del endpoint
+
