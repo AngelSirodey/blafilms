@@ -52,11 +52,13 @@ Los resultados se deben actualizar con lo que devuelva la api.
 
 ### Memoria
 
-- He creado dos carpetas una de cliente y otra de servidor.
+- He creado dos carpetas, una de cliente y otra de servidor.
 
-- En la carpeta de cliente tenemos una carpeta de componentes donde he añadido dos componentes: un Search y un MoviesList
+- En la carpeta de cliente tenemos una carpeta de componentes donde he añadido dos componentes: un Search y un MoviesList.
   En el Search está toda la lógica del buscador y en el MoviesList se muestran los resultados de la busqueda.
-  He decidido dejar el UseEffect para que haya una carga inicial con películas y que no solo haya un simple input al entrar.
+  He decidido dejar el UseEffect con una busqueda inicial por "king" para que haya una carga inicial con películas y que no solo haya un simple input al entrar,
+  pero se puede buscar en el search por lo que se quiera, y si no encuentra películas, saldrá el mensaje de error que nos devuelve la propia API cuando no obtiene       resultados.
+  Las flechas de derecha a izquierda incrementan y decrementan en 1 y he puesto hasta un máximo de 100 paginas que es el máximo que nos deja la API.
   
 - En la carpeta de server tenemos la llamada fetch y una carpeta de config con las variables para la url del endpoint
 
